@@ -1,0 +1,4 @@
+content   neoe_block_firefox                 chrome/content/
+skin      neoe_block_firefox   classic/1.0   chrome/skin/
+locale    neoe_block_firefox   en-US         chrome/locale/en-US/
+overlay	chrome://browser/content/browser.xul	chrome://neoe_block_firefox/content/ff-overlay.xul

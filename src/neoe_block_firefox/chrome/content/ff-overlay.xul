@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://neoe_block_firefox/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://neoe_block_firefox/locale/overlay.dtd">
+<overlay id="neoe_block_firefox-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="jquery.min.js"/>
+  <script src="preloadblock.js"/>
+  <script src="postloadremove.js"/>
+</overlay>
