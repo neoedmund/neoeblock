@@ -16,7 +16,7 @@ Install
 -------------
 In firefox(iceweal), press shift-control-A, to about:addons , then click on tool icon, then press "Install Add-on from file",
 then select **neoe_block_firefox.xpi** to install, you need restart firefox to make it start to work.
-The newest install binary is http://xxxxxxxchangeit
+The newest install binary is https://github.com/neoedmund/neoeblock/blob/master/src/neoe_block_firefox.xpi?raw=true
 
 See what is blocked, is it working good? debug
 -------------
