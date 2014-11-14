@@ -38,7 +38,7 @@ var toBlock=[
 	"platform.twitter.com", // speed up sf.net load
 	"1e100.net",//wtf
 	"pos.baidu.com/ecom?",
-	"fonts.googleapis.com",
+	".googleapis.com", // fonts,ajax,...
 ];
 
 
