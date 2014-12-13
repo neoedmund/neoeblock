@@ -39,6 +39,9 @@ var toBlock=[
 	"1e100.net",//wtf
 	"pos.baidu.com/ecom?",
 	".googleapis.com", // fonts,ajax,...
+	"_ad_",
+	"_ads_",
+	"_adv_",
 ];
 
 

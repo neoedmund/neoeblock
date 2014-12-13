@@ -11,11 +11,14 @@ var toRemove=[
 	["tube8.com","iframe"],
 	["fantasy8.com","iframe"],
 	[0,'[id*="_ads_"]'],
+	[0,'[id*="_ad_"]'],
 	[0,'[class*="_ads_"]'],
+	[0,'[class*="_ad_"]'],
 	[0,'[id^="ads_"]'],
 	["solidot",".adv"],
 	[0,"[id^='cproIframe']"],
 	[0,"[id^='BAIDU_DUP_']"],
+	[0,"[id^='ad-w-']"],
 	[0,"[id^='ad-w-']"],
 
 ];
@@ -62,6 +65,30 @@ var removeFuncs = [ // [enabled, site, function]
 		}
 		func1();
 	} ],
+	
+	[0, "all", function(doc){ // all ad , disable for bad performance 
+		var func1=function(){			
+			var x;
+			x=$('[id*="_ad_"]');
+			if (x.length) {
+				console.debug("[neoe]remove "+x.length+"x "+s);
+				x.remove();
+			}
+			x=$('[id*="_adv_"]');
+			if (x.length) {
+				console.debug("[neoe]remove "+x.length+"x "+s);
+				x.remove();
+			}
+			x=$('[id*="_ads_"]');
+			if (x.length) {
+				console.debug("[neoe]remove "+x.length+"x "+s);
+				x.remove();
+			}
+			setTimeout(func1, 10000);
+			console.debug("[neoe]run-check");
+		}
+		func1();
+	} ],
 ];
 
 
@@ -73,7 +100,7 @@ function work(doc) {
 	// removing
 	$.each(toRemove, function(i,ss){
 		var site=ss[0];
-		if (!site||href.indexOf(site)>=0){
+		if (site==0||href.indexOf(site)>=0){
 			//console.debug(ss);
 			var s=ss[1];
 			var x=$(s,doc);
@@ -92,7 +119,7 @@ function work(doc) {
 	$.each(removeFuncs, function(i,x){
 		if (x[0]){ //enabled
 			var site=x[1];
-			if (site && href.indexOf(site)>=0){ //site
+			if (site=="all" || href.indexOf(site)>=0){ //site
 				var f=x[2];
 				f(doc); // function
 				passed="removeFuncs";
@@ -104,7 +131,6 @@ function work(doc) {
 	else
 		console.debug("[neoe]postload passed");
 };
-
 
 
 
