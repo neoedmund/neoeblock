@@ -42,6 +42,9 @@ var toBlock=[
 	"_ad_",
 	"_ads_",
 	"_adv_",
+	"apis.google.com",
+	"asearch.alicdn.com", "strip.taobaocdn.com", //taobao ad
+	"360.cn", //i have nothing to do with 360
 ];
 
 
