@@ -47,20 +47,33 @@ var toBlock=[
 	"360.cn", //i have nothing to do with 360
 ];
 
-
+var toRedirect={
+	".*://ajax.googleapis.com/.*/jquery.min.js" :"http://code.jquery.com/jquery-1.11.3.min.js",
+};
 
 var testObserver = {
   observe : function(aSubject, aTopic, aData) {
 	  //console.debug("[neoe]preload in:"+aTopic);
 	  if ("http-on-modify-request" == aTopic) {
-		//console.debug("[neoe]preload working");
-		    aSubject.QueryInterface(Components.interfaces.nsIHttpChannel);
+		    var httpChannel = aSubject.QueryInterface(Components.interfaces.nsIHttpChannel);
 		    var url = aSubject.URI.spec;
-		    var i;
+		    console.debug("[neoe]preload checking "+url);
+
+		    for(var x in toRedirect) {
+		    	//console.debug("[neoe]redirect check: " +x);
+		    	if (new RegExp(x).test(url)) {
+		    		var y = toRedirect[x];
+			    	console.debug("[neoe]redirect: " + url+" to "+y);
+
+		    		httpChannel.redirectTo(Services.io.newURI(y, null, null));
+		    		return;
+		    	}
+		    }
+			var i;
 		    for (i=0;i<toBlock.length;i++){
 		   	var x=toBlock[i];
 		   	if (url.indexOf(x)>=0) {
-		    	 	console.log("[neoe]cancel: " + url);
+		    	 	console.debug("[neoe]cancel: " + url);
 		    	 	//var request = aSubject.QueryInterface(Components.interfaces.nsIRequest);
 			    	 aSubject.cancel(Components.results.NS_BINDING_ABORTED);
 			    	 return;
