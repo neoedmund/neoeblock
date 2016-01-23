@@ -45,6 +45,7 @@ var toBlock=[
 	"apis.google.com",
 	"asearch.alicdn.com", "strip.taobaocdn.com", //taobao ad
 	"360.cn", //i have nothing to do with 360
+	"bmp.ali213.net",
 ];
 
 var toRedirect={
