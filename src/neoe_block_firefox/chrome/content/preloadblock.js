@@ -46,6 +46,8 @@ var toBlock=[
 	"asearch.alicdn.com", "strip.taobaocdn.com", //taobao ad
 	"360.cn", //i have nothing to do with 360
 	"bmp.ali213.net",
+	"hao123.com", // congrats, you did have I noticed.
+	
 ];
 
 var toRedirect={
