@@ -47,6 +47,8 @@ var toBlock=[
 	"360.cn", //i have nothing to do with 360
 	"/livechat/",
 	"sohu.com/bill/",
+	"bmp.ali213.net",
+	"hao123.com",
 ];
 
 var toRedirect={
