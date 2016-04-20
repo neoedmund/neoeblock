@@ -20,7 +20,7 @@ var toRemove=[
 	[0,"[id^='BAIDU_DUP_']"],
 	[0,"[id^='ad-w-']"],
 	[0,"[id^='ad-w-']"],
-
+	["sohu.com", "sohuadcode"],
 ];
 
 var removeFuncs = [ // [enabled, site, function]
