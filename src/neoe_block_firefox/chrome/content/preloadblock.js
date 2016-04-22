@@ -3,7 +3,7 @@
 var toBlock=[
 	"google-analytics.com",
 	"doubleclick.net",
-	"googlesyndication.com/simgad",
+	"googlesyndication.com/",
 	"/adtv/",
 	"baidu.com/cpro",
 	"baidu.com/adrc.php",
