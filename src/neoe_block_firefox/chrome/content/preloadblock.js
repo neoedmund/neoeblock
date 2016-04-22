@@ -2,7 +2,6 @@
 
 var toBlock=[
 	"google-analytics.com",
-	"doubleclick.net/pagead/ads",
 	"doubleclick.net",
 	"googlesyndication.com/simgad",
 	"/adtv/",
@@ -14,6 +13,7 @@ var toBlock=[
 	"ads.traffichaus.com",
 	"camads.net",
 	"/ads.",
+	".ads.",
 	"uramov.info",
 	"serving-sys.com",
 	".impact-ad.jp",
@@ -49,6 +49,8 @@ var toBlock=[
 	"sohu.com/bill/",
 	"bmp.ali213.net",
 	"hao123.com",
+	"/adsense/",
+	"zhanqi.tv/"
 ];
 
 var toRedirect={
@@ -77,7 +79,7 @@ var testObserver = {
 		    for (i=0;i<toBlock.length;i++){
 		   	var x=toBlock[i];
 		   	if (url.indexOf(x)>=0) {
-		    	 	console.debug("[neoe]cancel: " + url);
+		    	 	console.debug("[neoe]cancel by '"+x+"': " + url);
 		    	 	//var request = aSubject.QueryInterface(Components.interfaces.nsIRequest);
 			    	 aSubject.cancel(Components.results.NS_BINDING_ABORTED);
 			    	 return;
