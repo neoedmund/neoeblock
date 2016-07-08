@@ -4,7 +4,7 @@
     <Description about="urn:mozilla:install-manifest">
         <em:type>2</em:type> <!-- 2 : Extension -->
         <em:id>neoedmund@gmail.com</em:id>
-        <em:version>2.160420.1</em:version>
+        <em:version>2.160708.1</em:version>
         <em:name>neoe-block-firefox</em:name>
         <em:description>block whatever neoe dont want to see.</em:description>
         <em:creator>neoe</em:creator>

@@ -7,6 +7,7 @@ var toBlock=[
 	"/adtv/",
 	"baidu.com/cpro",
 	"baidu.com/adrc.php",
+	"tb.himg.baidu.com/sys/portrait/item",
 	"drmcmm.baidu.com",
 	"exoclick.com",
 	"livejasmin.com",
@@ -70,7 +71,6 @@ var testObserver = {
 		    	if (new RegExp(x).test(url)) {
 		    		var y = toRedirect[x];
 			    	console.debug("[neoe]redirect: " + url+" to "+y);
-
 		    		httpChannel.redirectTo(Services.io.newURI(y, null, null));
 		    		return;
 		    	}
@@ -78,7 +78,15 @@ var testObserver = {
 			var i;
 		    for (i=0;i<toBlock.length;i++){
 		   	var x=toBlock[i];
-		   	if (url.indexOf(x)>=0) {
+		   	var cancel = false;
+		   	if (x instanceof Array) {
+		   		cancel= neoeblock_matchArray(x, url);
+		   	} else{
+		   		if (url.indexOf(x)>=0) {
+		   			cancel=true;
+		   		}
+		   	}
+		   	if (cancel){
 		    	 	console.debug("[neoe]cancel by '"+x+"': " + url);
 		    	 	//var request = aSubject.QueryInterface(Components.interfaces.nsIRequest);
 			    	 aSubject.cancel(Components.results.NS_BINDING_ABORTED);
@@ -103,6 +111,15 @@ var testObserver = {
 
 
 }
-
+function neoeblock_matchArray(x, url){
+	var len = x.length;
+	for (var i = 0; i < len; i++) {
+		if (url.indexOf(x[i])<0) return false;
+	}
+	return true;
+}
 window.addEventListener("load", testObserver.register, false);
 window.addEventListener("unload", testObserver.unregister, false);
+
+
+
