@@ -50,7 +50,11 @@ var toBlock=[
 	"bmp.ali213.net",
 	"hao123.com",
 	"/adsense/",
-	"zhanqi.tv/"
+	"zhanqi.tv/",
+	"img.twcczhu.com",
+	"654321wan.com",
+	"x.jd.com",
+	"tv.sohu.com"
 ];
 
 var toRedirect={
