@@ -21,6 +21,7 @@ var toRemove=[
 	[0,"[id^='ad-w-']"],
 	[0,"[id^='ad-w-']"],
 	["sohu.com", "sohuadcode"],
+	["tieba.baidu.com", "div[data-daid]"],
 ];
 
 var removeFuncs = [ // [enabled, site, function]
@@ -65,9 +66,38 @@ var removeFuncs = [ // [enabled, site, function]
 		}
 		func1();
 	} ],
-	
-	[0, "all", function(doc){ // all ad , disable for bad performance 
-		var func1=function(){			
+
+	[1, "baidu.com", function(doc) {
+		var func1=function(){
+			{
+				var s='div[title="商业推广"]';
+				//console.debug("check "+s);
+				var x=$(s,doc);
+				if (x.length) {
+					console.debug("[neoe]remove "+x.length+"x "+s);
+					$.each(x, function(index,item){
+						console.debug("[neoe]remove "+ item);
+						var t = $(item).parent().parent().parent();
+						console.debug("[neoe]remove "+ t);
+						t.remove();
+					});
+				}
+			}
+			{
+				var s="div[data-daid]";
+				var x=$(s,doc);
+				if (x.length) {
+					console.debug("[neoe]remove "+x.length+"x "+s);
+					x.remove();
+				}
+			}
+			setTimeout(func1, 10000);
+		}
+		func1();
+	} ],
+
+	[0, "all", function(doc){ // all ad , disable for bad performance
+		var func1=function(){
 			var x;
 			x=$('[id*="_ad_"]');
 			if (x.length) {
