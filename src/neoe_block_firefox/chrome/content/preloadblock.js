@@ -59,7 +59,7 @@ var toBlock=[
 ];
 
 var toRedirect={
-	".*://ajax.googleapis.com/.*/jquery.min.js" :"https://n101n.xyz/dl/jquery-3.1.1.slim.min.js",
+	".*://ajax.googleapis.com/.*/jquery.min.js" :"https://code.jquery.com/jquery-3.1.1.slim.min.js",
 };
 
 var testObserver = {
@@ -70,10 +70,12 @@ var testObserver = {
 		    var url = aSubject.URI.spec;
 		    console.debug("[neoe]preload checking "+url);
 
-		    for(var x in toRedirect) {
+		    //for(var x in toRedirect) 
+		    {
 		    	//console.debug("[neoe]redirect check: " +x);
-		    	if (new RegExp(x).test(url)) {
-		    		var y = toRedirect[x];
+		    	if (url.endsWith("/jquery.min.js") && url.indexOf("//ajax.googleapis.com/")>0){
+		    	//if (new RegExp(x).test(url)) {
+		    		var y = "https://code.jquery.com/jquery-3.1.1.slim.min.js" ; //toRedirect[x];
 			    	console.debug("[neoe]redirect: " + url+" to "+y);
 		    		httpChannel.redirectTo(Services.io.newURI(y, null, null));
 		    		return;
@@ -83,13 +85,13 @@ var testObserver = {
 		    for (i=0;i<toBlock.length;i++){
 		   	var x=toBlock[i];
 		   	var cancel = false;
-		   	if (x instanceof Array) {
-		   		cancel= neoeblock_matchArray(x, url);
-		   	} else{
+		   	//if (x instanceof Array) {
+		   	//	cancel= neoeblock_matchArray(x, url);
+		   	//} else{
 		   		if (url.indexOf(x)>=0) {
 		   			cancel=true;
 		   		}
-		   	}
+		   	//}
 		   	if (cancel){
 		    	 	console.debug("[neoe]cancel by '"+x+"': " + url);
 		    	 	//var request = aSubject.QueryInterface(Components.interfaces.nsIRequest);

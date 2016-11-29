@@ -3,23 +3,22 @@
 var toRemove=[
 // format [site,element], if site exists in url or site is not set, element will be removed
 // element is defined in jquery format
-	[0,".everyonelovesstackoverflow"],
+	[1,".everyonelovesstackoverflow"],
 	["yahoo", "#brandpanel"],
-	[0, '[id^="ADframe"]'],
+	[1, '[id^="ADframe"]'],
 	["yahoo", 'div[id^="ad"]'],
-	[0,"[id='ad']"],
+	[1,"[id='ad']"],
 	["tube8.com","iframe"],
 	["fantasy8.com","iframe"],
-	[0,'[id*="_ads_"]'],
-	[0,'[id*="_ad_"]'],
-	[0,'[class*="_ads_"]'],
-	[0,'[class*="_ad_"]'],
-	[0,'[id^="ads_"]'],
+	[1,'[id*="_ads_"]'],
+	[1,'[id*="_ad_"]'],
+	[1,'[class*="_ads_"]'],
+	[1,'[class*="_ad_"]'],
+	[1,'[id^="ads_"]'],
 	["solidot",".adv"],
-	[0,"[id^='cproIframe']"],
-	[0,"[id^='BAIDU_DUP_']"],
-	[0,"[id^='ad-w-']"],
-	[0,"[id^='ad-w-']"],
+	[1,"[id^='cproIframe']"],
+	[1,"[id^='BAIDU_DUP_']"],
+	[1,"[id^='ad-w-']"],
 	["sohu.com", "sohuadcode"],
 	["tieba.baidu.com", "div[data-daid]"],
 ];
@@ -128,9 +127,12 @@ function work(doc) {
 	var passed="1";
 	var href = doc.URL;
 	// removing
-	$.each(toRemove, function(i,ss){
+	var i=0;
+	for (i=0;i<toRemove.length;i++) {
+	//$.each(toRemove, function(i,ss){
+		ss = toRemove[i];
 		var site=ss[0];
-		if (site==0||href.indexOf(site)>=0){
+		if (site==1||href.indexOf(site)>=0){
 			//console.debug(ss);
 			var s=ss[1];
 			var x=$(s,doc);
@@ -146,16 +148,16 @@ function work(doc) {
 	});
 
 	// customized functions
-	$.each(removeFuncs, function(i,x){
-		if (x[0]){ //enabled
-			var site=x[1];
-			if (site=="all" || href.indexOf(site)>=0){ //site
-				var f=x[2];
-				f(doc); // function
-				passed="removeFuncs";
-			}
-		}
-	});
+	//$.each(removeFuncs, function(i,x){
+	//	if (x[0]){ //enabled
+	//		var site=x[1];
+	//		if (site=="all" || href.indexOf(site)>=0){ //site
+	//			var f=x[2];
+	//			f(doc); // function
+	//			passed="removeFuncs";
+	//		}
+	//	}
+	//});
 	if (passed!="1")
 		console.debug("[neoe]postload worked:"+passed);
 	else
