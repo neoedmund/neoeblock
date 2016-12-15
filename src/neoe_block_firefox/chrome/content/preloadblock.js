@@ -6,6 +6,7 @@ var toBlock=[
 	"googlesyndication.com/",
 	"/adtv/",
 	"baidu.com/cpro",
+	"pos.baidu.com/",
 	"baidu.com/adrc.php",
 	"tb.himg.baidu.com/sys/portrait/item",
 	"drmcmm.baidu.com",
@@ -38,7 +39,6 @@ var toBlock=[
 	"baifendian.com",
 	"platform.twitter.com", // speed up sf.net load
 	"1e100.net",//wtf
-	"pos.baidu.com/ecom?",
 	".googleapis.com", // fonts,ajax,...
 	"_ad_",
 	"_ads_",
