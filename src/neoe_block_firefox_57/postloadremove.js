@@ -121,14 +121,12 @@ var removeFuncs = [ // [enabled, site, function]
 ];
 
 
-function work( ) {
+function work(doc) {
 	var passed="1";
-	var doc = document;
-	var href =  window.location.href;
-	// removing
+	var href = window.location.href;
 	var i=0;
 	for (i=0;i<toRemove.length;i++) {
-		ss = toRemove[i];
+		var ss = toRemove[i];
 		var site=ss[0];
 		if (site==1||href.indexOf(site)>=0){
 			var s=ss[1];
@@ -141,24 +139,15 @@ function work( ) {
 				//console.debug("pass");
 			}
 		}
-	});
+	};
 
-	// customized functions
-	//$.each(removeFuncs, function(i,x){
-	//	if (x[0]){ //enabled
-	//		var site=x[1];
-	//		if (site=="all" || href.indexOf(site)>=0){ //site
-	//			var f=x[2];
-	//			f(doc); // function
-	//			passed="removeFuncs";
-	//		}
-	//	}
-	//});
+
 	if (passed!="1")
 		console.debug("[neoe]postload worked:"+passed);
 	else
 		console.debug("[neoe]postload passed");
 };
 
+work(document);
 
-work();
+
