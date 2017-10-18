@@ -55,11 +55,16 @@ var toBlock=[
 	"img.twcczhu.com",
 	"654321wan.com",
 	"x.jd.com",
-	"tv.sohu.com"
+	"tv.sohu.com",
+	"adshow.",
+	"ads.",
+	"_xacd."
 ];
 
 var toRedirect={
-	".*://ajax.googleapis.com/.*/jquery.min.js" :"https://code.jquery.com/jquery-3.1.1.slim.min.js",
+	".*://ajax.googleapis.com/ajax/libs/jquery/1.*/jquery.min.js" :"https://code.jquery.com/jquery-1.12.4.min.js",
+	".*://ajax.googleapis.com/ajax/libs/jquery/2.*/jquery.min.js" :"https://code.jquery.com/jquery-2.2.4.min.js",
+	".*://ajax.googleapis.com/ajax/libs/jquery/3.*/jquery.min.js" :"https://code.jquery.com/jquery-3.1.1.slim.min.js"
 };
 
 var testObserver = {
@@ -73,10 +78,24 @@ var testObserver = {
 		    //for(var x in toRedirect) 
 		    {
 		    	//console.debug("[neoe]redirect check: " +x);
-		    	if (url.endsWith("/jquery.min.js") && url.indexOf("//ajax.googleapis.com/")>0){
+		    	if (url.endsWith("/jquery.min.js") && url.indexOf("jquery/1.") >0 && url.indexOf("//ajax.googleapis.com/")>0){
+		    	//if (new RegExp(x).test(url)) {
+		    		var y = "https://code.jquery.com/jquery-1.12.4.min.js" ; //toRedirect[x];
+		    		console.debug("[neoe]redirect: " + url+" to "+y);
+		    		httpChannel.redirectTo(Services.io.newURI(y, null, null));
+		    		return;
+		    	}
+		    	if (url.endsWith("/jquery.min.js") && url.indexOf("jquery/2.") >0 && url.indexOf("//ajax.googleapis.com/")>0){
+		    	//if (new RegExp(x).test(url)) {
+		    		var y = "https://code.jquery.com/jquery-2.2.4.min.js" ; //toRedirect[x];
+		    		console.debug("[neoe]redirect: " + url+" to "+y);
+		    		httpChannel.redirectTo(Services.io.newURI(y, null, null));
+		    		return;
+		    	}
+		    	if (url.endsWith("/jquery.min.js") && url.indexOf("jquery/3.") >0 && url.indexOf("//ajax.googleapis.com/")>0){
 		    	//if (new RegExp(x).test(url)) {
 		    		var y = "https://code.jquery.com/jquery-3.1.1.slim.min.js" ; //toRedirect[x];
-			    	console.debug("[neoe]redirect: " + url+" to "+y);
+		    		console.debug("[neoe]redirect: " + url+" to "+y);
 		    		httpChannel.redirectTo(Services.io.newURI(y, null, null));
 		    		return;
 		    	}

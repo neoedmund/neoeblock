@@ -53,7 +53,11 @@ var toBlock=[
 	"img.twcczhu.com",
 	"654321wan.com",
 	"x.jd.com",
-	"tv.sohu.com"
+	"tv.sohu.com",
+	"/ads-",
+	".gamingadult.com",
+	"x/257596-1798120618297533_1.jpg",
+	"/ads/"
 ];
 
 
@@ -71,15 +75,12 @@ function preloadBlock(requestDetails) {
     var i;
     for (i=0;i<toBlock.length;i++){
    	var x=toBlock[i];
-   	var cancel = false;
    	if (url.indexOf(x)>=0) {
-   		cancel=true;
+   		console.debug("[neoe]cancel by '"+x+"': " + url);
+   		return {cancel: true};
    	}
-   	if (cancel){
-    	 	console.debug("[neoe]cancel by '"+x+"': " + url);
-    	 }
-		return {cancel: cancel};
 	}
+	return {cancel: false};
     }
 }
 
