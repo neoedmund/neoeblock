@@ -57,7 +57,8 @@ var toBlock=[
 	"/ads-",
 	".gamingadult.com",
 	"x/257596-1798120618297533_1.jpg",
-	"/ads/"
+	"/ads/",
+	"s.click.taobao.com/"
 ];
 
 
