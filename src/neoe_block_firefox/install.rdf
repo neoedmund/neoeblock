@@ -8,6 +8,7 @@
         <em:name>neoe-block-firefox</em:name>
         <em:description>block whatever neoe dont want to see.</em:description>
         <em:creator>neoe</em:creator>
+        <em:multiprocessCompatible>true</em:multiprocessCompatible>
         <em:targetApplication>
             <Description>
                 <!-- Firefox -->

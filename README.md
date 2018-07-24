@@ -6,6 +6,9 @@ Neoe Ad blocker for firefox
 ### Block what ever neoe don't want to see.
 
 
+
+
+
 How it works
 -------------
 It employs 2 phrased blocking: preload-block and postload-block.
@@ -16,10 +19,7 @@ It employs 2 phrased blocking: preload-block and postload-block.
 
 Install 
 -------------
-In firefox(iceweal), press shift-control-A, to about:addons , then click on tool icon, then press "Install Add-on from file",
-then select **neoe_block_firefox.xpi** to install, you need restart firefox to make it start to work.
-
-The newest install binary is https://github.com/neoedmund/neoeblock/blob/master/src/neoe_block_firefox.xpi?raw=true
+The only official release link is https://github.com/neoedmund/neoeblock/raw/master/src/neoeblock2-1.0-an%2Bfx.xpi
 
 See what is blocked, is it working good? debug
 -------------
