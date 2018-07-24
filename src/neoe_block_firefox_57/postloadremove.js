@@ -20,7 +20,9 @@ var toRemove=[
 	[1,"[id^='BAIDU_DUP_']"],
 	[1,"[id^='ad-w-']"],
 	["sohu.com", "sohuadcode"],
+	["sohu.com", ".godR"],
 	["tieba.baidu.com", "div[data-daid]"],
+	
 ];
 
 var removeFuncs = [ // [enabled, site, function]

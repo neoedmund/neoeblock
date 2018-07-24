@@ -62,7 +62,7 @@ function preloadBlock(requestDetails) {
   console.debug("[neoe]pre: " + url);
   { // redirect
   	if (url.endsWith("/jquery.min.js") && url.indexOf("//ajax.googleapis.com/")>0){
-    		var y = "https://code.jquery.com/jquery-3.1.1.slim.min.js" ;
+    		var y = "https://code.jquery.com/jquery-3.3.1.slim.min.js" ;
 	    	console.debug("[neoe]redirect: " + url+" to "+y);
 	    	return {redirectUrl: y};
   	}

@@ -2,7 +2,7 @@
   "description": "block whatever neoe donnot want to see",
   "manifest_version": 2,
   "name": "neoeblock2",
-  "version": "1.0",
+  "version": "1.1",
 
   "permissions": [
     "webRequest",
@@ -17,7 +17,7 @@
    "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["jquery-3.1.1.slim.min.js", "postloadremove.js"]
+      "js": ["jquery-3.3.1.slim.min.js", "postloadremove.js"]
     }
   ]
 }
