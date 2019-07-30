@@ -59,7 +59,8 @@ var toBlock=[
 	"x/257596-1798120618297533_1.jpg",
 	"/ads/",
 	".2cq.com",
-	"s.click.taobao.com/"
+	"s.click.taobao.com/",
+	".taboola.com",
 ];
 
 

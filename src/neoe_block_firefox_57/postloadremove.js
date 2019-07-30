@@ -22,7 +22,8 @@ var toRemove=[
 	["sohu.com", "sohuadcode"],
 	["sohu.com", ".godR"],
 	["tieba.baidu.com", "div[data-daid]"],
-	
+
+
 ];
 
 var removeFuncs = [ // [enabled, site, function]
@@ -115,10 +116,14 @@ var removeFuncs = [ // [enabled, site, function]
 				console.debug("[neoe]remove "+x.length+"x "+s);
 				x.remove();
 			}
-			setTimeout(func1, 10000);
+			x=$('div.trc_rbox_container');
+			if (x.length) {
+				console.debug("[neoe]remove "+x.length+"x "+s);
+				x.remove();
+			}
 			console.debug("[neoe]run-check");
 		}
-		func1();
+		setTimeout(func1, 2000);
 	} ],
 ];
 
