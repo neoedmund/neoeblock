@@ -61,6 +61,10 @@ var toBlock=[
 	".2cq.com",
 	"s.click.taobao.com/",
 	".taboola.com",
+	"improving.duckduckgo.com",
+	"play.google.com",
+	".services.mozilla.com",
+	"http://detectportal.firefox.com/success.txt",
 ];
 
 
