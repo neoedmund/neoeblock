@@ -19,7 +19,6 @@ It employs 2 phrased blocking: preload-block and postload-block.
 
 Install 
 -------------
-The only official release link is https://github.com/neoedmund/neoeblock/raw/master/src/neoeblock2-1.0-an%2Bfx.xpi
 
 See what is blocked, is it working good? debug
 -------------

@@ -37,7 +37,7 @@ var toBlock=[
 	"baifendian.com",
 	"platform.twitter.com", // speed up sf.net load
 	"1e100.net",//wtf
-	".googleapis.com", // fonts,ajax,...
+//	".googleapis.com", // fonts,ajax,...
 	"_ad_",
 	"_ads_",
 	"_adv_",
@@ -72,11 +72,11 @@ function preloadBlock(requestDetails) {
   var url = requestDetails.url;
   console.debug("[neoe]pre: " + url);
   { // redirect
-  	if (url.endsWith("/jquery.min.js") && url.indexOf("//ajax.googleapis.com/")>0){
-    		var y = "https://code.jquery.com/jquery-3.3.1.slim.min.js" ;
-	    	console.debug("[neoe]redirect: " + url+" to "+y);
-	    	return {redirectUrl: y};
-  	}
+  	//if (url.endsWith("/jquery.min.js") && url.indexOf("//ajax.googleapis.com/")>0){
+   // 		var y = "https://code.jquery.com/jquery-3.3.1.slim.min.js" ;
+	  //  	console.debug("[neoe]redirect: " + url+" to "+y);
+	  //  	return {redirectUrl: y};
+  	//}
   }
   {//block
     var i;
