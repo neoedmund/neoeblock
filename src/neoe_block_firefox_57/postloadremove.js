@@ -22,7 +22,7 @@ var toRemove=[
 	["sohu.com", "sohuadcode"],
 	["sohu.com", ".godR"],
 	["tieba.baidu.com", "div[data-daid]"],
-
+	["youtube.com", "div[id='masthead-ad']"],
 
 ];
 
